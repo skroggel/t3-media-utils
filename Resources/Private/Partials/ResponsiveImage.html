@@ -1,0 +1,67 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" 
+     xmlns:sms="http://typo3.org/ns/Sitegeist/SmsResponsiveImages/ViewHelpers" data-namespace-typo3-fluid="true">
+
+    <f:variable name="finalSrcset">{f:if(condition: '{srcset}', then: '{srcset}', else: '{settings.tx_smsresponsiveimages.srcset}')}</f:variable>
+    <f:variable name="finalLazyload">{f:if(condition: '{lazyload}', then: '{lazyload}', else: '{settings.tx_smsresponsiveimages.lazyload}')}</f:variable>
+    <f:variable name="finalPlaceholderSize">{f:if(condition: '{placeholderSize}', then: '{placeholderSize}', else: '{settings.tx_smsresponsiveimages.placeholderSize}')}</f:variable>
+    <f:variable name="finalPlaceholderInline">{f:if(condition: '{placeholderInline}', then: '{placeholderInline}', else: '{settings.tx_smsresponsiveimages.placeholderInline}')}</f:variable>
+    <f:variable name="finalSizes">{f:if(condition: '{sizes}', then: '{sizes}', else: '{settings.tx_smsresponsiveimages.sizes}')}</f:variable>
+    <f:variable name="finalBreakpoints">{f:if(condition: '{breakpoints}', then: '{breakpoints}', else: '{settings.tx_smsresponsiveimages.breakpoints}')}</f:variable>
+    <f:variable name="finalIgnoreFileExtensions">{f:if(condition: '{ignoreFileExtensions}', then: '{ignoreFileExtensions}', else: '{settings.tx_smsresponsiveimages.ignoreFileExtensions}')}</f:variable>
+    <f:variable name="finalFileExtension">{f:if(condition: '{fileExtension}', then: '{fileExtension}', else: '{settings.tx_smsresponsiveimages.fileExtension}')}</f:variable>
+    <f:variable name="finalImageDecoding">{f:if(condition: '{imageDecoding}', then: '{imageDecoding}', else: '{settings.tx_smsresponsiveimages.imageDecoding}')}</f:variable>
+    <f:variable name="finalLoading">{f:if(condition: '{loading}', then: '{loading}', else: '{settings.tx_smsresponsiveimages.loading}')}</f:variable>
+
+    <f:if condition="{image}">
+        <sms:image
+            class="{class}"
+            image="{image}"
+            width="{width}"
+            height="{height}"
+            minWidth="{minWidth}"
+            minHeight="{minHeight}"
+            maxWidth="{maxWidth}"
+            maxHeight="{maxHeight}"
+            alt="{file.alternative}"
+            title="{file.title}"
+
+            srcset="{finalSrcset}"
+            lazyload="{finalLazyload}"
+            placeholderSize="{finalPlaceholderSize}"
+            placeholderInline="{finalPlaceholderInline}"
+            sizes="{finalSizes}"
+            breakpoints="{finalBreakpoints}"
+            ignoreFileExtensions="{finalIgnoreFileExtensions}"
+            fileExtension="{finalFileExtension}"
+            loading="{finalLoading}"
+            decoding="{finalImageDecoding}"
+        />
+    </f:if>
+
+    <f:if condition="{src}">
+        <sms:image
+            class="{class}"
+            src="{src}"
+            width="{width}"
+            height="{height}"
+            minWidth="{minWidth}"
+            minHeight="{minHeight}"
+            maxWidth="{maxWidth}"
+            maxHeight="{maxHeight}"
+            alt="{file.alternative}"
+            title="{file.title}"
+
+            srcset="{finalSrcset}"
+            lazyload="{finalLazyload}"
+            placeholderSize="{finalPlaceholderSize}"
+            placeholderInline="{finalPlaceholderInline}"
+            sizes="{finalSizes}"
+            breakpoints="{finalBreakpoints}"
+            ignoreFileExtensions="{finalIgnoreFileExtensions}"
+            fileExtension="{finalFileExtension}"
+            loading="{finalLoading}"
+            decoding="{finalImageDecoding}"
+        />   
+    </f:if>
+    
+</html>

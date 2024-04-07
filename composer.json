@@ -1,0 +1,34 @@
+{
+    "name": "madj2k/t3-media-utils",
+    "type": "typo3-cms-extension",
+    "description": "Extension with some performance fixes and helpers for sms_responsive_images",
+    "homepage": "https://www.steffenkroggel.de",
+    "license": ["GPL-2.0+"],
+    "keywords": ["TYPO3 CMS", "Responsvie Images"],
+    "support": {
+        "email": "developer@steffenkroggel.de"
+    },
+    "authors": [
+        {
+            "name": "Steffen Kroggel",
+            "email": "developer@steffenkroggel.de",
+            "homepage": "https://www.steffenkroggel.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "typo3/cms-core": "~9.5.0 || ~10.4.0 || ~11.5.0 || ~12.4.0",
+        "sitegeist/sms-responsive-images" : "~3.0.0"
+     },
+    "autoload": {
+        "psr-4": {
+            "Madj2k\\MediaUtils\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "media_utils"
+        }
+    }
+}
