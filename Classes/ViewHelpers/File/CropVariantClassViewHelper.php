@@ -15,20 +15,18 @@ namespace Madj2k\MediaUtils\ViewHelpers\File;
  */
 
 use TYPO3\CMS\Core\Resource\FileReference;
-use \TYPO3\CMS\Extbase\Domain\Model\FileReference as ExtbaseFileReference;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * Class GetProperty
+ * Class CropVariantClass
  *
  * @author Steffen Kroggel <developer@steffenkroggel.de>
  * @copyright Steffen Kroggel <developer@steffenkroggel.de>
  * @package Madj2k_MediaUtils
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  */
-class GetPropertyViewHelper extends AbstractViewHelper
+class CropVariantClassViewHelper extends AbstractViewHelper
 {
 
     /**
@@ -39,9 +37,8 @@ class GetPropertyViewHelper extends AbstractViewHelper
     public function initializeArguments(): void
     {
         parent::initializeArguments();
-		$this->registerArgument('file', 'mixed', 'The fileReference-object', false);
-		$this->registerArgument('property', 'string', 'The property to load', false);
-
+		$this->registerArgument('file', \TYPO3\CMS\Core\Resource\FileReference::class, 'The fileReference-object', false);
+		$this->registerArgument('bootstrap', 'bool', 'Whether to use bootstrap or normal classes', false);
 	}
 
 
@@ -59,28 +56,29 @@ class GetPropertyViewHelper extends AbstractViewHelper
 
 		/** @var \TYPO3\CMS\Core\Resource\FileReference $fileReference */
 		$fileReference = $arguments['file'];
+		$bootstrap = (bool) $arguments['bootstrap'];
 
-		/** @var string $property */
-		$property = $arguments['property']?: 'mime_type';
+		// get crop-property!
 		if (
 			($fileReference instanceof FileReference)
-			|| (is_subclass_of($fileReference, FileReference::class))
-			|| (is_subclass_of($fileReference, ExtbaseFileReference::class))
+			&& ($cropVariants = $fileReference->getProperty('crop'))
+			&& (is_string($cropVariants))
 		){
-            
-            // special treatment because of encapsulation in Extbase
-			$referenceObject = $fileReference;
-			if (is_subclass_of($fileReference, ExtbaseFileReference::class)) {
-				$referenceObject = $fileReference->getOriginalResource();
-			}
 
-			$getter = 'get' . GeneralUtility::underscoredToUpperCamelCase($property);
-			if (method_exists($referenceObject, $getter)) {
-				return $referenceObject->$getter();
-			}
+			$firstVariant = (array) json_decode($cropVariants);
+			if ($firstVariant) {
 
-			if ($referenceObject->hasProperty($property)) {
-				return $referenceObject->getProperty($property);
+				$variantDetails = (array) current($firstVariant);
+				if (
+					($variantDetails)
+					&& ($ratio = $variantDetails['selectedRatio'])
+				){
+					if ($bootstrap) {
+						return 'ratio ratio-' . strtolower(preg_replace('#[^0-9a-zA-Z]#', 'x', $ratio));
+					} else {
+						return 'aspect-ratio-' . strtolower(preg_replace('#[^0-9a-zA-Z]#', 'x', $ratio));
+					}
+				}
 			}
 		}
 
