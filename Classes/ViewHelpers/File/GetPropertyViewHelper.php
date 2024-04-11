@@ -62,13 +62,13 @@ class GetPropertyViewHelper extends AbstractViewHelper
 
 		/** @var string $property */
 		$property = $arguments['property']?: 'mime_type';
-
 		if (
 			($fileReference instanceof FileReference)
 			|| (is_subclass_of($fileReference, FileReference::class))
 			|| (is_subclass_of($fileReference, ExtbaseFileReference::class))
 		){
-			// special treatment because of encapsulation in Extbase
+            
+            // special treatment because of encapsulation in Extbase
 			$referenceObject = $fileReference;
 			if (is_subclass_of($fileReference, ExtbaseFileReference::class)) {
 				$referenceObject = $fileReference->getOriginalResource();
