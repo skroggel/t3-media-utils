@@ -1,3 +1,6 @@
+/**
+ * Configuration for responsive images
+ */
 lib.contentElement {
 
       # Add responsive image settings to all content elements
@@ -39,4 +42,11 @@ lib.contentElement {
           # Additional css classes for all image elements
           class =
     }
+}
+
+/**
+ * Inherit settings
+ */
+lib.maskContentElement {
+    settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
 }

@@ -1,31 +1,18 @@
 # media_utils
-<<<<<<< Updated upstream
-This extension provides some performance-fixes and improvements for the extension sms_responsive_images (sitegeist/sms-responsive-images) and some helpful ViewHelper for the usage with media-files.
-=======
 This extension provides
 * some performance-fixes and improvements for EXT:sms_responsive_images (sitegeist/sms-responsive-images) and
-* some helpful ViewHelpers
-* ready-to-use partials for the usage with media-files
->>>>>>> Stashed changes
+* some helpful ViewHelpers and includable partials for the usage with media-files.
 
 ## Features
-* Fixes performance issue with upsizing of images of sms_responsive_images
-* Includes a media-partial for usage in own extensions with fallback to the default settings of sms_responsive_images for your website
-* Includes a TypoScript-configuration for responsive images of sms_responsive_images with Bootstrap (picture-tag only)
+* Fixes performance issue with upsizing of images of EXT:sms_responsive_images
+* Includes a media-partial for usage in own extensions with fallback to the default settings of EXT:sms_responsive_images for your website
+* Includes a TypoScript-configuration for responsive images of EXT:sms_responsive_images with Bootstrap (picture-tag only)
 * Some helpful ViewHelpers for usage with media-files
-* Ready-to-use partials for the usage with media-files (responsive images and videos) with standardized wrappers and automatic fallback to default-settings.
-* Automatically includes into EXT:mask
 
 ## Installation
-<<<<<<< Updated upstream
-Just install the extension. There is no further configuration needed.
-If you want to use TypoScript-configuration for responsive images with Bootstrap, just include the corresponding configuration into your root-template.
-Make sure you include it AFTER the TypoScript-configuration of sms_responsive_images (sitegeist/sms-responsive-images).
-
-=======
 Just install the extension and include the Typoscript-configuration.
 Make sure you include it AFTER the TypoScript-configuration of EXT:sms_responsive_images (sitegeist/sms-responsive-images).
-If you want to use TypoScript-configuration for responsive images with Bootstrap, just include the corresponding configuration into your root-template.
+If you want to use TypoScript-configuration for responsive images** **with Bootstrap, just include the corresponding configuration into your root-template.
 
 Ensure that you add "webp" as allowed image extension in your settings.php
 ```
@@ -215,12 +202,11 @@ lib.siteDefault {
     }
 }
 ```
->>>>>>> Stashed changes
 
-## Usage of responsive images in your own extension with defined configuration
+### Usage for images in your own extension
 There are basically two ways:
 
-### Use the partial of this extension and override only the values you need to override (recommended)
+#### Use the partial of this extension and override only the values you need to override (recommended)
 1) Extend the partialPaths accordingly:
 ```
 tx_myextension {
@@ -229,17 +215,18 @@ tx_myextension {
             1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
         }
     }
+}
 ```
 2) Merge the global settings into your extension settings:
 ```
 tx_myextension.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
 ```
-3) Use the partial accordingly
+3) Use the partial accordingly and add additional settings if you want (see above)
 ```
-<f:render partial="ResponsiveImage" arguments="{image: image, width: 1000}" />
+<f:render partial="Utils/Media" arguments="{image: image, width: 1000, settings: settings}" />
 ```
 
-### Use the normal ViewHelper and insert the values of the TypoScript-lib into each parameter
+#### Use the normal ViewHelper and insert the values of the TypoScript-lib into each parameter
 ```
 <html xmlns:sms="http://typo3.org/ns/Sitegeist/SmsResponsiveImages/ViewHelpers" data-namespace-typo3-fluid="true">
 <sms:media
