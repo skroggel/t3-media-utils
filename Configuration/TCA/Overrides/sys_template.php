@@ -7,14 +7,13 @@ call_user_func(
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
             $extKey,
             'Configuration/TypoScript',
-            'Configuration'
+            'MediaUtils'
         );
-
         
         \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
             $extKey,
             'Configuration/TypoScript/Bootstrap',
-            'Responsive Images Bootstrap Configuration (optional)'
+            'MediaUtils - Responsive Images Bootstrap Configuration (optional)'
         );
 
     },

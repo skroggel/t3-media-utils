@@ -25,7 +25,7 @@ The extension automatically includes the configuration for responsive images to 
 This way all your custom content elements have the according settings automaticllay available.
 
 If you configure default-settings for your custom content elements, you can also include default-settings for your media files.
-Just follow this stucture for your TypoScript-configuration:
+Just follow this structure for your TypoScript-configuration:
 ```
 tt_content.mask_your_element {
     settings {
@@ -149,9 +149,9 @@ would load the default-settings for the sub-key "small":
 ```
 <f:render partial="Utils/Media" arguments="{file: image, maxWidth: 1000, settings: settings, settingsVariant: 'small'}" />
 ```
-### Usage in TypoScript (FluidTemplates)
+### Usage in TypoScript-based FluidTemplates
 The usage does not differ much from the usage with EXT:mask.
-You simply have to include the corresponsing settings and the partial-path into your TypoScript.
+You simply have to include the corresponding settings and the partial-path into your TypoScript.
 Here you also have the ability to override the default settings, e.g. if you want to use different cropVariants for each breakpoint.
 ```
 lib.siteDefault {
