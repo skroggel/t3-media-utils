@@ -1,0 +1,34 @@
+plugin.tx_mediautils {
+
+	view {
+		layoutRootPaths {
+			0 = EXT:media_utils/Resources/Private/Layouts/
+			10 = {$plugin.tx_mediautils.view.layoutRootPath}
+		}
+		templateRootPaths {
+			0 = EXT:media_utils/Resources/Private/Templates/
+            10 = {$plugin.tx_mediautils.view.templateRootPath}
+        }
+		partialRootPaths {
+			0 = EXT:media_utils/Resources/Private/Partials/
+			10 = {$plugin.tx_mediautils.view.partialRootPath}
+        }
+	}
+
+	persistence {
+		storagePid = {$plugin.tx_mediautils.persistence.storagePid}
+	}
+
+	settings {
+
+	}
+}
+
+/**
+ * Inherit partials to EXT:mask
+ */
+lib.maskContentElement {
+    partialRootPaths {
+        1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
+    }
+}

@@ -1,0 +1,91 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:sms="http://typo3.org/ns/Sitegeist/ResponsiveImages/ViewHelpers"
+	  xmlns:mediaUtils="http://typo3.org/ns/Madj2k/MediaUtils/ViewHelpers/File"
+	  data-namespace-typo3-fluid="true">
+
+    <figure class="img {wrapClass}">
+        <f:link.typolink class="link link-image" parameter="{link}">
+            <div class="img-inner {classInner} {classInnerImage}">
+                <f:render section="Inner" arguments="{_all}" />
+                <f:if condition="{textOverlay}">
+                    <div class="img-overlay">
+                        <div class="img-overlay-text">
+                            <span>{textOverlay}</span>
+                        </div>
+                    </div>
+                </f:if>
+            </div>
+        </f:link.typolink>
+        <f:if condition="{caption}">
+            <figcaption class="img-caption">{caption}</figcaption>
+        </f:if>
+    </figure>
+
+    <f:comment><!-- ================================================================================== --></f:comment>
+
+    <f:section name="Inner">
+        <f:variable name="internalAspectRatioClass"><f:if condition="{aspectRatio}"><mediaUtils:cropVariantClass file="{file}" bootstrap="false"/></f:if></f:variable>
+        <f:variable name="internalSrcset">{f:if(condition: '{srcset}', then: '{srcset}', else: '{settings.tx_smsresponsiveimages.srcset}')}</f:variable>
+        <f:variable name="internalLazyload">{f:if(condition: '{lazyload}', then: '{lazyload}', else: '{settings.tx_smsresponsiveimages.lazyload}')}</f:variable>
+        <f:variable name="internalPlaceholderSize">{f:if(condition: '{placeholderSize}', then: '{placeholderSize}', else: '{settings.tx_smsresponsiveimages.placeholderSize}')}</f:variable>
+        <f:variable name="internalPlaceholderInline">{f:if(condition: '{placeholderInline}', then: '{placeholderInline}', else: '{settings.tx_smsresponsiveimages.placeholderInline}')}</f:variable>
+        <f:variable name="internalSizes">{f:if(condition: '{sizes}', then: '{sizes}', else: '{settings.tx_smsresponsiveimages.sizes}')}</f:variable>
+        <f:variable name="internalBreakpoints">{f:if(condition: '{breakpoints}', then: '{breakpoints}', else: '{settings.tx_smsresponsiveimages.breakpoints}')}</f:variable>
+        <f:variable name="internalIgnoreFileExtensions">{f:if(condition: '{ignoreFileExtensions}', then: '{ignoreFileExtensions}', else: '{settings.tx_smsresponsiveimages.ignoreFileExtensions}')}</f:variable>
+        <f:variable name="internalFileExtension">{f:if(condition: '{fileExtension}', then: '{fileExtension}', else: '{settings.tx_smsresponsiveimages.fileExtension}')}</f:variable>
+        <f:variable name="internalImageDecoding">{f:if(condition: '{fileDecoding}', then: '{fileDecoding}', else: '{settings.tx_smsresponsiveimages.imageDecoding}')}</f:variable>
+        <f:variable name="internalLoading">{f:if(condition: '{loading}', then: '{loading}', else: '{settings.tx_smsresponsiveimages.loading}')}</f:variable>
+
+        <f:if condition="{file}">
+            <sms:image
+                class="{class} {internalAspectRatioClass}"
+                image="{file}"
+                width="{width}"
+                height="{height}"
+                minWidth="{minWidth}"
+                minHeight="{minHeight}"
+                maxWidth="{maxWidth}"
+                maxHeight="{maxHeight}"
+                alt="{file.alternative}"
+                title="{file.title}"
+
+                srcset="{internalSrcset}"
+                lazyload="{internalLazyload}"
+                placeholderSize="{internalPlaceholderSize}"
+                placeholderInline="{internalPlaceholderInline}"
+                sizes="{internalSizes}"
+                breakpoints="{internalBreakpoints}"
+                ignoreFileExtensions="{internalIgnoreFileExtensions}"
+                fileExtension="{internalFileExtension}"
+                loading="{internalLoading}"
+                decoding="{internalImageDecoding}"
+            />
+        </f:if>
+
+        <f:if condition="{src}">
+            <sms:image
+                class="{class}"
+                src="{src}"
+                width="{width}"
+                height="{height}"
+                minWidth="{minWidth}"
+                minHeight="{minHeight}"
+                maxWidth="{maxWidth}"
+                maxHeight="{maxHeight}"
+                alt="{file.alternative}"
+                title="{file.title}"
+
+                srcset="{internalSrcset}"
+                lazyload="{internalLazyload}"
+                placeholderSize="{internalPlaceholderSize}"
+                placeholderInline="{internalPlaceholderInline}"
+                sizes="{internalSizes}"
+                breakpoints="{internalBreakpoints}"
+                ignoreFileExtensions="{internalIgnoreFileExtensions}"
+                fileExtension="{internalFileExtension}"
+                loading="{internalLoading}"
+                decoding="{internalImageDecoding}"
+            />
+        </f:if>
+    </f:section>
+</html>
