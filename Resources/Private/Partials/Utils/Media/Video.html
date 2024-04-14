@@ -2,15 +2,17 @@
 	  xmlns:sms="http://typo3.org/ns/Sitegeist/ResponsiveImages/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
-    <figure class="video {wrapClass}">
-        <div class="video-inner {classInner} {classInnerVideo}">
-            <f:render section="Inner" arguments="{_all}" />
-        </div>
+    <f:if condition="{file}">
+        <figure class="video {wrapClass}">
+            <div class="video-inner {classInner} {classInnerVideo}">
+                <f:render section="Inner" arguments="{_all}" />
+            </div>
 
-        <f:if condition="{caption}">
-            <figcaption class="video-caption">{caption}</figcaption>
-        </f:if>
-    </figure>
+            <f:if condition="{caption}">
+                <figcaption class="video-caption">{caption}</figcaption>
+            </f:if>
+        </figure>
+    </f:if>
 
     <f:comment><!-- ================================================================================== --></f:comment>
 

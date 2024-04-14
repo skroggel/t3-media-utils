@@ -3,24 +3,25 @@
 	  xmlns:mediaUtils="http://typo3.org/ns/Madj2k/MediaUtils/ViewHelpers/File"
 	  data-namespace-typo3-fluid="true">
 
-    <figure class="img {wrapClass}">
-        <f:link.typolink class="link link-image" parameter="{link}">
-            <div class="img-inner {classInner} {classInnerImage}">
-                <f:render section="Inner" arguments="{_all}" />
-                <f:if condition="{textOverlay}">
-                    <div class="img-overlay">
-                        <div class="img-overlay-text">
-                            <span>{textOverlay}</span>
+    <f:if condition="{file} || {src}">
+        <figure class="img {wrapClass}">
+            <f:link.typolink class="link link-image" parameter="{link}">
+                <div class="img-inner {classInner} {classInnerImage}">
+                    <f:render section="Inner" arguments="{_all}" />
+                    <f:if condition="{textOverlay}">
+                        <div class="img-overlay">
+                            <div class="img-overlay-text">
+                                <span>{textOverlay}</span>
+                            </div>
                         </div>
-                    </div>
-                </f:if>
-            </div>
-        </f:link.typolink>
-        <f:if condition="{caption}">
-            <figcaption class="img-caption">{caption}</figcaption>
-        </f:if>
-    </figure>
-
+                    </f:if>
+                </div>
+            </f:link.typolink>
+            <f:if condition="{caption}">
+                <figcaption class="img-caption">{caption}</figcaption>
+            </f:if>
+        </figure>
+    </f:if>
     <f:comment><!-- ================================================================================== --></f:comment>
 
     <f:section name="Inner">
