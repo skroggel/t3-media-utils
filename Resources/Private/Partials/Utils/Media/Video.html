@@ -8,8 +8,13 @@
                 <f:render section="Inner" arguments="{_all}" />
             </div>
 
-            <f:if condition="{caption}">
-                <figcaption class="video-caption">{caption}</figcaption>
+            <f:if condition="{caption} || {file.description}">
+                <figcaption class="video-caption">
+                    <f:if condition="{caption}">
+                        <f:then>{caption}</f:then>
+                        <f:else>{file.description}</f:else>
+                    </f:if>
+                </figcaption>
             </f:if>
         </figure>
     </f:if>
