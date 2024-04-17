@@ -17,8 +17,13 @@
                     </f:if>
                 </div>
             </f:link.typolink>
-            <f:if condition="{caption}">
-                <figcaption class="img-caption">{caption}</figcaption>
+            <f:if condition="{caption} || {file.description}">
+                <figcaption class="img-caption">
+                    <f:if condition="{caption}">
+                        <f:then>{caption}</f:then>
+                        <f:else>{file.description}</f:else>
+                    </f:if>
+                </figcaption>
             </f:if>
         </figure>
     </f:if>
