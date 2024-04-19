@@ -41,7 +41,7 @@
         <f:variable name="internalFileExtension">{f:if(condition: '{fileExtension}', then: '{fileExtension}', else: '{settings.tx_smsresponsiveimages.fileExtension}')}</f:variable>
         <f:variable name="internalImageDecoding">{f:if(condition: '{fileDecoding}', then: '{fileDecoding}', else: '{settings.tx_smsresponsiveimages.imageDecoding}')}</f:variable>
         <f:variable name="internalLoading">{f:if(condition: '{loading}', then: '{loading}', else: '{settings.tx_smsresponsiveimages.loading}')}</f:variable>
-
+        
         <f:if condition="{file}">
             <sms:image
                 class="{class} {internalAspectRatioClass}"
@@ -64,6 +64,7 @@
                 ignoreFileExtensions="{internalIgnoreFileExtensions}"
                 fileExtension="{internalFileExtension}"
                 loading="{internalLoading}"
+                decoding="{internalImageDecoding}"
             />
         </f:if>
 
@@ -89,6 +90,7 @@
                 ignoreFileExtensions="{internalIgnoreFileExtensions}"
                 fileExtension="{internalFileExtension}"
                 loading="{internalLoading}"
+                decoding="{internalImageDecoding}"
             />
         </f:if>
     </f:section>
