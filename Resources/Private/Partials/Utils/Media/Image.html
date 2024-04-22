@@ -33,8 +33,8 @@
         <f:variable name="internalAspectRatioClass"><f:if condition="{aspectRatio}"><mediaUtils:cropVariantClass file="{file}" bootstrap="false"/></f:if></f:variable>
         <f:variable name="internalSrcset">{f:if(condition: '{srcset}', then: '{srcset}', else: '{settings.tx_smsresponsiveimages.srcset}')}</f:variable>
         <f:variable name="internalLazyload">{f:if(condition: '{lazyload}', then: '{lazyload}', else: '{settings.tx_smsresponsiveimages.lazyload}')}</f:variable>
-        <f:variable name="internalPlaceholderSize">{f:if(condition: '{placeholderSize}', then: '{placeholderSize}', else: '{settings.tx_smsresponsiveimages.placeholderSize}')}</f:variable>
-        <f:variable name="internalPlaceholderInline">{f:if(condition: '{placeholderInline}', then: '{placeholderInline}', else: '{settings.tx_smsresponsiveimages.placeholderInline}')}</f:variable>
+        <f:variable name="internalPlaceholderSize">{f:if(condition: '{placeholderSize}', then: '{placeholderSize}', else: '{settings.tx_smsresponsiveimages.placeholder.size}')}</f:variable>
+        <f:variable name="internalPlaceholderInline">{f:if(condition: '{placeholderInline}', then: '{placeholderInline}', else: '{settings.tx_smsresponsiveimages.placeholder.inline}')}</f:variable>
         <f:variable name="internalSizes">{f:if(condition: '{sizes}', then: '{sizes}', else: '{settings.tx_smsresponsiveimages.sizes}')}</f:variable>
         <f:variable name="internalBreakpoints">{f:if(condition: '{breakpoints}', then: '{breakpoints}', else: '{settings.tx_smsresponsiveimages.breakpoints}')}</f:variable>
         <f:variable name="internalIgnoreFileExtensions">{f:if(condition: '{ignoreFileExtensions}', then: '{ignoreFileExtensions}', else: '{settings.tx_smsresponsiveimages.ignoreFileExtensions}')}</f:variable>
