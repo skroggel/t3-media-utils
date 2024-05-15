@@ -87,9 +87,9 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
                     $widthDescriptor = $candidateWidth . 'w';
             }
 
-			/* SK: fix for image-upscaling.
-			 * Also possible via [GFX][processor_allowUpscaling]=false (see below) but would create unnecessary workload by
-			 * rendering images that are not used at the end of the day
+			/** SK: fix for image-upscaling.
+			 *  Also possible via [GFX][processor_allowUpscaling]=false (see below) but would create unnecessary workload by
+			 *  rendering images that are not used at the end of the day
 			 */
 			if (
 				($maxImageWidth = $image->getProperty('width'))
@@ -122,8 +122,8 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
             if ($srcsetMode === 'w' && $processedWidth !== $candidateWidth) {
                 $widthDescriptor = $processedWidth . 'w';
 
-                /* SK: cancel further processing
-                 * May be reached if upscaling is set to false AND no with set via parameters
+                /** SK: cancel further processing
+                 *  May be reached if upscaling is set to false AND no with set via parameters
                  */
                 break;
             }
@@ -161,7 +161,8 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
         ?string $fileExtension = null
     ): TagBuilder {
 
-        if ($this->hasIgnoredFileExtension($originalImage, $ignoreFileExtensions, $fileExtension)) {
+        /** SK: remove fileExtension-parameter from SVGs to prevent transforming of SVG into webp in some constellations! */
+        if ($originalImage->getProperty('extension') == 'svg') {
             return parent::createSimpleImageTag(
                 $originalImage,
                 $fallbackImage,
@@ -171,10 +172,10 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
                 $lazyload,
                 $placeholderSize,
                 $placeholderInline,
-                null // remove file extension to prevent processing in some constellations!
+                null
             );
         }
-        
+
         return parent::createSimpleImageTag(
             $originalImage,
             $fallbackImage,
