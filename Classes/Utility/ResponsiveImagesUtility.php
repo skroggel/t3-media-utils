@@ -162,7 +162,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
     ): TagBuilder {
 
         if ($this->hasIgnoredFileExtension($originalImage, $ignoreFileExtensions, $fileExtension)) {
-            parent::createSimpleImageTag(
+            return parent::createSimpleImageTag(
                 $originalImage,
                 $fallbackImage,
                 $fallbackTag,
@@ -174,6 +174,18 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
                 null // remove file extension to prevent processing in some constellations!
             );
         }
+        
+        return parent::createSimpleImageTag(
+            $originalImage,
+            $fallbackImage,
+            $fallbackTag,
+            $focusArea,
+            $absoluteUri,
+            $lazyload,
+            $placeholderSize,
+            $placeholderInline,
+            $fileExtension
+        );
     }
 
 
