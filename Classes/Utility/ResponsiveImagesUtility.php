@@ -17,6 +17,7 @@ namespace Madj2k\MediaUtils\Utility;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\Area;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
  * Class ResponsiveImagesUtility
@@ -86,9 +87,9 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
                     $widthDescriptor = $candidateWidth . 'w';
             }
 
-			/* SK: fix for image-upscaling.
-			 * Also possible via [GFX][processor_allowUpscaling]=false (see below) but would create unnecessary workload by
-			 * rendering images that are not used at the end of the day
+			/** SK: fix for image-upscaling.
+			 *  Also possible via [GFX][processor_allowUpscaling]=false (see below) but would create unnecessary workload by
+			 *  rendering images that are not used at the end of the day
 			 */
 			if (
 				($maxImageWidth = $image->getProperty('width'))
@@ -121,8 +122,8 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
             if ($srcsetMode === 'w' && $processedWidth !== $candidateWidth) {
                 $widthDescriptor = $processedWidth . 'w';
 
-                /* SK: cancel further processing
-                 * May be reached if upscaling is set to false AND no with set via parameters
+                /** SK: cancel further processing
+                 *  May be reached if upscaling is set to false AND no with set via parameters
                  */
                 break;
             }
@@ -131,6 +132,61 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
         }
 
         return $images;
+    }
+
+
+    /**
+     * Creates a simple image tag
+     *
+     * @param  FileInterface $image
+     * @param  FileInterface $fallbackImage
+     * @param  TagBuilder    $tag
+     * @param  Area          $focusArea
+     * @param  bool          $absoluteUri
+     * @param  bool          $lazyload
+     * @param  int           $placeholderSize
+     * @param  bool          $placeholderInline
+     *
+     * @return TagBuilder
+     */
+    public function createSimpleImageTag(
+        FileInterface $originalImage,
+        FileInterface $fallbackImage = null,
+        TagBuilder $tag = null,
+        Area $focusArea = null,
+        bool $absoluteUri = false,
+        bool $lazyload = false,
+        int $placeholderSize = 0,
+        bool $placeholderInline = false,
+        ?string $fileExtension = null
+    ): TagBuilder {
+
+        /** SK: remove fileExtension-parameter from SVGs to prevent transforming of SVG into webp in some constellations! */
+        if ($originalImage->getProperty('extension') == 'svg') {
+            return parent::createSimpleImageTag(
+                $originalImage,
+                $fallbackImage,
+                $fallbackTag,
+                $focusArea,
+                $absoluteUri,
+                $lazyload,
+                $placeholderSize,
+                $placeholderInline,
+                null
+            );
+        }
+
+        return parent::createSimpleImageTag(
+            $originalImage,
+            $fallbackImage,
+            $fallbackTag,
+            $focusArea,
+            $absoluteUri,
+            $lazyload,
+            $placeholderSize,
+            $placeholderInline,
+            $fileExtension
+        );
     }
 
 
