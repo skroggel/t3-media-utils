@@ -171,10 +171,10 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
                 $lazyload,
                 $placeholderSize,
                 $placeholderInline,
-                null // remove file extension to prevent processing in some constellations!
+                null /* SK: remove file extension to prevent processing in some constellations! */
             );
         }
-        
+
         return parent::createSimpleImageTag(
             $originalImage,
             $fallbackImage,
