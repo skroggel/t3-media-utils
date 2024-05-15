@@ -17,6 +17,7 @@ namespace Madj2k\MediaUtils\Utility;
 use TYPO3\CMS\Core\Resource\FileInterface;
 use TYPO3\CMS\Core\Imaging\ImageManipulation\Area;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
 
 /**
  * Class ResponsiveImagesUtility
@@ -131,6 +132,48 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
         }
 
         return $images;
+    }
+
+
+    /**
+     * Creates a simple image tag
+     *
+     * @param  FileInterface $image
+     * @param  FileInterface $fallbackImage
+     * @param  TagBuilder    $tag
+     * @param  Area          $focusArea
+     * @param  bool          $absoluteUri
+     * @param  bool          $lazyload
+     * @param  int           $placeholderSize
+     * @param  bool          $placeholderInline
+     *
+     * @return TagBuilder
+     */
+    public function createSimpleImageTag(
+        FileInterface $originalImage,
+        FileInterface $fallbackImage = null,
+        TagBuilder $tag = null,
+        Area $focusArea = null,
+        bool $absoluteUri = false,
+        bool $lazyload = false,
+        int $placeholderSize = 0,
+        bool $placeholderInline = false,
+        ?string $fileExtension = null
+    ): TagBuilder {
+
+        if ($this->hasIgnoredFileExtension($originalImage, $ignoreFileExtensions, $fileExtension)) {
+            parent::createSimpleImageTag(
+                $originalImage,
+                $fallbackImage,
+                $fallbackTag,
+                $focusArea,
+                $absoluteUri,
+                $lazyload,
+                $placeholderSize,
+                $placeholderInline,
+                null // remove file extension to prevent processing in some constellations!
+            );
+        }
     }
 
 
