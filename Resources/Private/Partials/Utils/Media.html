@@ -28,13 +28,14 @@
                 </f:case>
 
                 <f:defaultCase>
-                    <f:comment><!-- Nothing to do here --></f:comment>
+                    <f:comment><!-- We assume it's an image --></f:comment>
+                    <f:render section="Image" arguments="{_all}" />
                 </f:defaultCase>
             </f:switch>
         </f:then>
-        
+
         <f:else>
-            <f:comment><!-- if src given instead of file or we try to load the fallback --></f:comment>
+            <f:comment><!-- if src is given instead of a file or if we try to load the fallback --></f:comment>
             <f:render section="Image" arguments="{_all}" />
         </f:else>
 	</f:if>

@@ -23,7 +23,7 @@ $EM_CONF[$_EXTKEY] = [
 	'version' => '12.4.2',
 	'constraints' => [
 		'depends' => [
-            'typo3' => '9.5.0-12.4.99',
+            'typo3' => '10.4.0-12.4.99',
             'sms_responsive_images' => '3.0.0'
         ],
 		'conflicts' => [
