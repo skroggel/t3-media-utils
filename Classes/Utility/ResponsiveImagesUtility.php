@@ -166,7 +166,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
             return parent::createSimpleImageTag(
                 $originalImage,
                 $fallbackImage,
-                $fallbackTag,
+                $tag,
                 $focusArea,
                 $absoluteUri,
                 $lazyload,
@@ -179,7 +179,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
         return parent::createSimpleImageTag(
             $originalImage,
             $fallbackImage,
-            $fallbackTag,
+            $tag,
             $focusArea,
             $absoluteUri,
             $lazyload,
