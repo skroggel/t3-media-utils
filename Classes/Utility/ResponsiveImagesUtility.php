@@ -99,7 +99,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
 				if ($srcsetMode == 'w') {
 					$candidateWidth = (int) $maxImageWidth;
 					$widthDescriptor = $maxImageWidth . 'w';
-					if ($images[$widthDescriptor]) {
+					if (isset($images[$widthDescriptor])) {
 						continue;
 					}
 				}
