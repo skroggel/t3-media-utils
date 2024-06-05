@@ -11,7 +11,7 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-	'title' => 'Responsive Images Helper',
+	'title' => 'Media Utils',
 	'description' => '',
 	'category' => 'plugin',
 	'author' => 'Steffen Kroggel',
