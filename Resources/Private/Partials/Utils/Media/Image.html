@@ -41,6 +41,8 @@
         <f:variable name="internalFileExtension">{f:if(condition: '{fileExtension}', then: '{fileExtension}', else: '{settings.tx_smsresponsiveimages.fileExtension}')}</f:variable>
         <f:variable name="internalImageDecoding">{f:if(condition: '{fileDecoding}', then: '{fileDecoding}', else: '{settings.tx_smsresponsiveimages.imageDecoding}')}</f:variable>
         <f:variable name="internalLoading">{f:if(condition: '{loading}', then: '{loading}', else: '{settings.tx_smsresponsiveimages.loading}')}</f:variable>
+        <f:variable name="internalTitle">{f:if(condition: '{title}', then: '{title}', else: '{file.title}')}</f:variable>
+        <f:variable name="internalAlternative">{f:if(condition: '{alternative}', then: '{alternative}', else: '{file.alternative}')}</f:variable>
 
         <f:if condition="{file}">
             <sms:image
@@ -52,8 +54,8 @@
                 minHeight="{minHeight}"
                 maxWidth="{maxWidth}"
                 maxHeight="{maxHeight}"
-                alt="{file.alternative}"
-                title="{file.title}"
+                alt="{internalAlternative}"
+                title="{internalTitle}"
 
                 srcset="{internalSrcset}"
                 lazyload="{internalLazyload}"
