@@ -99,7 +99,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
 				if ($srcsetMode == 'w') {
 					$candidateWidth = (int) $maxImageWidth;
 					$widthDescriptor = $maxImageWidth . 'w';
-					if ($images[$widthDescriptor]) {
+					if (isset($images[$widthDescriptor])) {
 						continue;
 					}
 				}
@@ -166,7 +166,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
             return parent::createSimpleImageTag(
                 $originalImage,
                 $fallbackImage,
-                $fallbackTag,
+                $tag,
                 $focusArea,
                 $absoluteUri,
                 $lazyload,
@@ -179,7 +179,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
         return parent::createSimpleImageTag(
             $originalImage,
             $fallbackImage,
-            $fallbackTag,
+            $tag,
             $focusArea,
             $absoluteUri,
             $lazyload,
