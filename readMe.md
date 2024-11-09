@@ -37,19 +37,18 @@ tt_content.mask_your_element {
                 }
             }
             video {
-				video {
-					dimensions {
-						width = 1370
-						height= 771
-					}
-					additionalConfig {
-					    autoplay = 1
-						mute = 1
-						loop = 0
-						modestbranding = 1
-					}
+                dimensions {
+                    width = 1370
+                    height= 771
+                }
+                additionalConfig {
+                    autoplay = 1
+                    mute = 1
+                    loop = 0
+                    modestbranding = 1
                 }
             }
+
 		}
     }
 }
