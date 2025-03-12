@@ -20,11 +20,11 @@ $EM_CONF[$_EXTKEY] = [
 	'internal' => '',
 	'uploadfolder' => '0',
 	'clearCacheOnLoad' => 0,
-	'version' => '12.4.18',
+	'version' => '13.4.0',
 	'constraints' => [
 		'depends' => [
-            'typo3' => '10.4.0-12.4.99',
-            'sms_responsive_images' => '3.0.0'
+            'typo3' => '10.4.0-13.4.99',
+            'sms_responsive_images' => '3.0.0-3.1.0'
         ],
 		'conflicts' => [
 		],
