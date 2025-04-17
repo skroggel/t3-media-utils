@@ -48,7 +48,6 @@ tt_content.mask_your_element {
                     modestbranding = 1
                 }
             }
-
 		}
     }
 }
