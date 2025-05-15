@@ -15,7 +15,6 @@ namespace Madj2k\MediaUtils\ViewHelpers\File;
  */
 
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -40,31 +39,22 @@ class GetReferenceViewHelper extends AbstractViewHelper
 		$this->registerArgument('table', 'string', 'The table-name', true);
 		$this->registerArgument('field', 'string', 'The field-name', true);
 		$this->registerArgument('uid', 'integer', 'The uid of the referencing element', true);
-
-
 	}
 
 
 	/**
-	 * @param array $arguments
-	 * @param \Closure $renderChildrenClosure
-	 * @param \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext
 	 * @return array
 	 */
-    public static function renderStatic(
-        array $arguments,
-        \Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ): array {
+    public function render(): array {
 
 		/** @var string $table */
-		$table = $arguments['table'];
+		$table = $this->arguments['table'];
 
 		/** @var string $field */
-		$field = $arguments['field'];
+		$field = $this->arguments['field'];
 
 		/** @var int $uid */
-		$uid = $arguments['uid'];
+		$uid = $this->arguments['uid'];
 
 		$fileRepository = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Resource\FileRepository::class);
 		return $fileRepository->findByRelation($table, $field, $uid);

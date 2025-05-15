@@ -48,7 +48,6 @@ tt_content.mask_your_element {
                     modestbranding = 1
                 }
             }
-
 		}
     }
 }
@@ -222,7 +221,7 @@ tx_myextension.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_
 ```
 3) Use the partial accordingly and add additional settings if you want (see above)
 ```
-<f:render partial="Utils/Media" arguments="{image: image, width: 1000, settings: settings}" />
+<f:render partial="Utils/Media" arguments="{file: image, width: 1000, settings: settings}" />
 ```
 
 #### Use the normal ViewHelper and insert the values of the TypoScript-lib into each parameter

@@ -15,7 +15,6 @@ namespace Madj2k\MediaUtils\ViewHelpers\File;
  */
 
 use TYPO3\CMS\Core\Resource\FileReference;
-use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
@@ -43,20 +42,13 @@ class CropVariantClassViewHelper extends AbstractViewHelper
 
 
 	/**
-	 * @param array $arguments
-	 * @param \Closure $renderChildrenClosure
-	 * @param \TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface $renderingContext
 	 * @return string
 	 */
-    public static function renderStatic(
-        array $arguments,
-        \Closure $renderChildrenClosure,
-        RenderingContextInterface $renderingContext
-    ): string {
+    public function render(): string {
 
 		/** @var \TYPO3\CMS\Core\Resource\FileReference $fileReference */
-		$fileReference = $arguments['file'];
-		$bootstrap = (bool) $arguments['bootstrap'];
+		$fileReference = $this->arguments['file'];
+		$bootstrap = (bool) $this->arguments['bootstrap'];
 
 		// get crop-property!
 		if (
@@ -84,5 +76,4 @@ class CropVariantClassViewHelper extends AbstractViewHelper
 
 		return '';
 	}
-
 }

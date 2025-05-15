@@ -56,7 +56,7 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
         FileInterface $image,
         int $defaultWidth,
         $srcset,
-        Area $cropArea = null,
+        ?Area $cropArea = null,
         bool $absoluteUri = false,
         ?string $fileExtension = null
     ): array {
@@ -151,9 +151,9 @@ class ResponsiveImagesUtility extends \Sitegeist\ResponsiveImages\Utility\Respon
      */
     public function createSimpleImageTag(
         FileInterface $originalImage,
-        FileInterface $fallbackImage = null,
-        TagBuilder $tag = null,
-        Area $focusArea = null,
+        ?FileInterface $fallbackImage = null,
+        ?TagBuilder $tag = null,
+        ?Area $focusArea = null,
         bool $absoluteUri = false,
         bool $lazyload = false,
         int $placeholderSize = 0,

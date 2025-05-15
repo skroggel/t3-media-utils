@@ -1,0 +1,4 @@
+name: madj2k/media-utils-bootstrap
+label: 'Media Utils – Responsive Images Bootstrap Configuration (optional)'
+dependencies:
+  - madj2k/media-utils
