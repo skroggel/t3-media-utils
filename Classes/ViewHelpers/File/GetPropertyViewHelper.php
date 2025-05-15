@@ -46,7 +46,7 @@ class GetPropertyViewHelper extends AbstractViewHelper
 	/**
 	 * @return string
 	 */
-    public  function renderStatic(): string {
+    public function render(): string {
 
 		/** @var \TYPO3\CMS\Core\Resource\FileReference $fileReference */
 		$fileReference = $this->arguments['file'];
