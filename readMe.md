@@ -180,7 +180,7 @@ lib.siteDefault {
                 pageTitle.data = page:title
             }
 
-            settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
+            settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
             settings.tx_smsresponsiveimages {
 
                 loading = eager
@@ -217,7 +217,7 @@ tx_myextension {
 ```
 2) Merge the global settings into your extension settings:
 ```
-tx_myextension.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
+tx_myextension.settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
 ```
 3) Use the partial accordingly and add additional settings if you want (see above)
 ```
@@ -228,22 +228,22 @@ tx_myextension.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_
 ```
 <html xmlns:sms="http://typo3.org/ns/Sitegeist/SmsResponsiveImages/ViewHelpers" data-namespace-typo3-fluid="true">
 <sms:media
-	class="image-embed-item{f:if(condition: settings.tx_smsresponsiveimages.class, then: ' {lib.contentElement.settings.tx_smsresponsiveimages.class}')}"
+	class="image-embed-item{f:if(condition: settings.tx_smsresponsiveimages.class, then: ' {lib.madj2kMediaUtils.responsiveImages.class}')}"
 	file="{file}"
 	width="{dimensions.width}"
 	height="{dimensions.height}"
 	alt="{file.alternative}"
 	title="{file.title}"
-	srcset="{lib.contentElement.settings.tx_smsresponsiveimages.srcset}"
-	lazyload="{lib.contentElement.settings.tx_smsresponsiveimages.lazyload}"
-	placeholderSize="{lib.contentElement.settings.tx_smsresponsiveimages.placeholder.size}"
-	placeholderInline="{lib.contentElement.settings.tx_smsresponsiveimages.placeholder.inline}"
-	sizes="{lib.contentElement.settings.tx_smsresponsiveimages.sizes}"
-	breakpoints="{lib.contentElement.settings.tx_smsresponsiveimages.breakpoints}"
-	ignoreFileExtensions="{lib.contentElement.settings.tx_smsresponsiveimages.ignoreFileExtensions}"
-	fileExtension="{lib.contentElement.settings.tx_smsresponsiveimages.fileExtension}"
-	loading="{lib.contentElement.settings.media.lazyLoading}"
-	decoding="{lib.contentElement.settings.media.imageDecoding}"
+	srcset="{lib.madj2kMediaUtils.responsiveImages.srcset}"
+	lazyload="{lib.madj2kMediaUtils.responsiveImages.lazyload}"
+	placeholderSize="{lib.madj2kMediaUtils.responsiveImages.placeholder.size}"
+	placeholderInline="{lib.madj2kMediaUtils.responsiveImages.placeholder.inline}"
+	sizes="{lib.madj2kMediaUtils.responsiveImages.sizes}"
+	breakpoints="{lib.madj2kMediaUtils.responsiveImages.breakpoints}"
+	ignoreFileExtensions="{lib.madj2kMediaUtils.responsiveImages.ignoreFileExtensions}"
+	fileExtension="{lib.madj2kMediaUtils.responsiveImages.fileExtension}"
+	loading="{lib.madj2kMediaUtils.responsiveImages.settings.media.lazyLoading}"
+	decoding="{lib.madj2kMediaUtils.responsiveImages.settings.media.imageDecoding}"
 />
 </html>
 ```

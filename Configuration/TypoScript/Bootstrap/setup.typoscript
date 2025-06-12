@@ -1,52 +1,54 @@
 /**
  * Configuration for responsive images
  */
-lib.contentElement {
+
+lib.madj2kMediaUtils.responsiveImages {
 
       # Add responsive image settings to all content elements
-      settings.tx_smsresponsiveimages {
-          loading = lazy
-          lazyload = 0
+      loading = lazy
+      lazyload = 0
 
-          placeholder {
-                size = 1
-                inline = 1
+      placeholder {
+            size = 1
+            inline = 1
+      }
+
+      srcset =
+      sizes =
+      breakpoints {
+          0 {
+              cropVariant = default
+              media = (min-width: 992px)
+              srcset = 1200, 1400, 1920, 2800, 3840
+              sizes = (min-width: %1$dpx) %1$dpx, 100vw
           }
-
-          srcset =
-          sizes =
-          breakpoints {
-              0 {
-                  cropVariant = default
-                  media = (min-width: 992px)
-                  srcset = 1200, 1400, 1920, 2800, 3840
-                  sizes = (min-width: %1$dpx) %1$dpx, 100vw
-              }
-              1 {
-                  cropVariant = default
-                  media = (min-width: 576px)
-                  srcset = 768, 992
-                  sizes = (min-width: %1$dpx) %1$dpx, 100vw
-              }
-              2 {
-                  cropVariant = default
-                  media = (min-width: 0px)
-                  srcset = 390, 576
-                  sizes = (min-width: %1$dpx) %1$dpx, 100vw
-              }
+          1 {
+              cropVariant = default
+              media = (min-width: 576px)
+              srcset = 768, 992
+              sizes = (min-width: %1$dpx) %1$dpx, 100vw
           }
+          2 {
+              cropVariant = default
+              media = (min-width: 0px)
+              srcset = 390, 576
+              sizes = (min-width: %1$dpx) %1$dpx, 100vw
+          }
+      }
 
-          ignoreFileExtensions = gif, svg
-          fileExtension = webp
+      ignoreFileExtensions = gif, svg
+      fileExtension = webp
 
-          # Additional css classes for all image elements
-          class =
-    }
+      # Additional css classes for all image elements
+      class =
+
 }
+
 
 /**
  * Inherit settings
  */
+lib.contentElement.settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
 lib.maskContentElement {
     settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
 }
