@@ -33,6 +33,7 @@
         <f:variable name="internalAspectRatioClass"><f:if condition="{aspectRatio}"><mediaUtils:cropVariantClass file="{file}" bootstrap="false"/></f:if></f:variable>
         <f:variable name="internalSrcset">{f:if(condition: '{srcset}', then: '{srcset}', else: '{settings.tx_smsresponsiveimages.srcset}')}</f:variable>
         <f:variable name="internalLazyload">{f:if(condition: '{lazyload}', then: '{lazyload}', else: '{settings.tx_smsresponsiveimages.lazyload}')}</f:variable>
+        <f:variable name="internalfetchPriority">{f:if(condition: '{fetchPriority}', then: '{fetchPriority}', else: '{settings.tx_smsresponsiveimages.fetchPriority}')}</f:variable>
         <f:variable name="internalPlaceholderSize">{f:if(condition: '{placeholderSize}', then: '{placeholderSize}', else: '{settings.tx_smsresponsiveimages.placeholder.size}')}</f:variable>
         <f:variable name="internalPlaceholderInline">{f:if(condition: '{placeholderInline}', then: '{placeholderInline}', else: '{settings.tx_smsresponsiveimages.placeholder.inline}')}</f:variable>
         <f:variable name="internalSizes">{f:if(condition: '{sizes}', then: '{sizes}', else: '{settings.tx_smsresponsiveimages.sizes}')}</f:variable>
@@ -67,6 +68,8 @@
                 fileExtension="{internalFileExtension}"
                 loading="{internalLoading}"
                 decoding="{internalImageDecoding}"
+
+                additionalAttributes="{fetchPriority: internalfetchPriority}"
             />
         </f:if>
 
@@ -93,6 +96,8 @@
                 fileExtension="{internalFileExtension}"
                 loading="{internalLoading}"
                 decoding="{internalImageDecoding}"
+
+                additionalAttributes="{fetchPriority: internalfetchPriority}"
             />
         </f:if>
     </f:section>
