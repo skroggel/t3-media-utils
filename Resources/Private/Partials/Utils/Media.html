@@ -46,7 +46,7 @@
     <f:section name="Image">
         
         <f:comment><!-- Do some mapping if default settings for the video are given --></f:comment>
-        <f:for each="{1: 'loading', 2: 'fallback', 3: 'fileExtension', 4: 'srcset', 5: 'placeholderSize', 6: 'placeholderInline', 7: 'sizes', 8: 'breakpoints', 9: 'ignoreFileExtensions', 10: 'fileDecoding'}" as="variable">
+        <f:for each="{1: 'loading', 2: 'fetchpriority', 3: 'fallback', 4: 'fileExtension', 5: 'srcset', 6: 'placeholderSize', 7: 'placeholderInline', 8: 'sizes', 9: 'breakpoints', 10: 'ignoreFileExtensions', 11: 'fileDecoding'}" as="variable">
             <f:if condition="{settingsVariant}">
                 <f:then>
                     <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.{settingsVariant}.image.{variable}}')}</f:variable>
