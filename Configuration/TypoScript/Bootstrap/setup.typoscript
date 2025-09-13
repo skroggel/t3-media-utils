@@ -49,6 +49,6 @@ lib.madj2kMediaUtils.responsiveImages {
  * Inherit settings
  */
 lib.contentElement.settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
-lib.maskContentElement {
-    settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
-}
+lib.contentBlock.settings.tx_smsresponsiveimages < lib.madj2kMediaUtils.responsiveImages
+lib.maskContentElement.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
+

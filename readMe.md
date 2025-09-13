@@ -20,7 +20,134 @@ $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext'] = 'gif,jpg,jpeg,tif,tiff,bmp
 ```
 
 ## How to use
-### Usage with EXT:Mask
+### Usage with EXT:content-blocks (friendsoftypo3/content-blocks)
+The extension automatically includes the configuration for responsive images to EXT:content-blocks.
+This way all your custom content elements have the according settings automaticllay available.
+
+If you configure default-settings for your custom content elements, you can also include default-settings for your media files.
+Just follow this structure for your TypoScript-configuration:
+```
+tt_content.VENDOR_your_element {
+    settings {
+    	[...]
+        media {
+            image {
+                dimensions {
+                    maxWidth = 650
+                }
+            }
+            video {
+                dimensions {
+                    width = 1370
+                    height= 771
+                }
+                additionalConfig {
+                    autoplay = 1
+                    mute = 1
+                    loop = 0
+                    modestbranding = 1
+                }
+            }
+		}
+    }
+}
+```
+Here you also have the ability to override the default settings, e.g. if you want to use different cropVariants for each breakpoint:
+```
+tt_content.VENDOR_your_element {
+    settings {
+
+        [...]
+
+        tx_smsresponsiveimages {
+
+            loading = eager
+            breakpoints {
+                0 {
+                    cropVariant = default
+                }
+                1 {
+                    cropVariant = tablet
+                }
+                2 {
+                    cropVariant = mobile
+                }
+            }
+        }
+
+    	[...]
+    }
+}
+```
+Then call the media-partial in your content-element like this:
+```
+<f:render partial="Utils/Media" arguments="{file: image, maxWidth: 1000, settings: settings}" />
+```
+If you e.g. set a explicit maxWidth this value will be used, otherwise the default value from your TypoScript-configuration will be used.
+The defined configuration for responsive images is applied automatically.
+
+There may be the case that you have multiple styles of one custom content element which require different default-settings for your media.
+This can be handeled by extending your TypoScript-configuration by an additional sub-key to switch between the settings.
+Example:
+```
+tt_content.VENDOR_your_element {
+    settings {
+    	[...]
+        media {
+
+            small {
+                image {
+                    dimensions {
+                        maxWidth = 650
+                    }
+                }
+                video {
+                    video {
+                        dimensions {
+                            width = 1370
+                            height= 771
+                        }
+                        additionalConfig {
+                            autoplay = 1
+                            mute = 1
+                            loop = 0
+                            modestbranding = 1
+                        }
+                    }
+                }
+            }
+
+            big {
+                image {
+                    dimensions {
+                        maxWidth = 650
+                    }
+                }
+                video {
+                    video {
+                        dimensions {
+                            width = 1370
+                            height= 771
+                        }
+                        additionalConfig {
+                            autoplay = 1
+                            mute = 1
+                            loop = 0
+                            modestbranding = 1
+                        }
+                    }
+                }
+            }
+		}
+    }
+}
+```
+Now you can call the media-partial in your content-element with the according key for the desired setting. The following call
+would load the default-settings for the sub-key "small":
+```
+<f:render partial="Utils/Media" arguments="{file: image, maxWidth: 1000, settings: settings, settingsVariant: 'small'}" />
+```
+### Usage with EXT:mask (deprecated)
 The extension automatically includes the configuration for responsive images to EXT:mask.
 This way all your custom content elements have the according settings automaticllay available.
 
