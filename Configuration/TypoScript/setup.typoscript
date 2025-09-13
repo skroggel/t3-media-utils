@@ -35,7 +35,7 @@ lib.maskContentElement {
 /**
  * Inherit partials to EXT:content-blocks
  */
-lib.ContentBlock {
+lib.contentBlock {
     partialRootPaths {
         1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
     }
