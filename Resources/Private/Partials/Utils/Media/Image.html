@@ -3,10 +3,11 @@
 	  xmlns:mediaUtils="http://typo3.org/ns/Madj2k/MediaUtils/ViewHelpers/File"
 	  data-namespace-typo3-fluid="true">
 
+    <f:variable name="innerClass" value="{innerClass} {classInner} {classInnerImage}" />
     <f:if condition="{file} || {src}">
         <figure class="img {wrapClass}">
             <f:link.typolink class="link link-image" parameter="{link}">
-                <div class="img-inner {classInner} {classInnerImage}">
+                <div class="img-inner {innerClass}">
                     <f:render section="Inner" arguments="{_all}" />
                     <f:if condition="{textOverlay}">
                         <div class="img-overlay">
