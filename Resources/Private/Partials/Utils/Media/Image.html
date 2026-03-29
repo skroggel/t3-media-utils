@@ -21,7 +21,7 @@
             <f:if condition="{caption} || {file.description}">
                 <figcaption class="img-caption">
                     <f:if condition="{caption}">
-                        <f:then>{caption}</f:then>
+                        <f:then>{caption -> f:format.raw()}</f:then>
                         <f:else>{file.description}</f:else>
                     </f:if>
                 </figcaption>
