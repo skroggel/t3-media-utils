@@ -42,6 +42,7 @@ tt_content.VENDOR_your_element {
                     height= 771
                 }
                 additionalConfig {
+                    playsinline = 1 // needed for Safari on Mobile
                     autoplay = 1
                     mute = 1
                     loop = 0
