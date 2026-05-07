@@ -1,1 +1,1 @@
-@import 'EXT:media_utils/Configuration/TypoScript/Bootstrap/setup.typoscript'
+@import 'EXT:media_utils/Configuration/TypoScript/setup.typoscript'

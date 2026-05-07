@@ -40,3 +40,63 @@ lib.contentBlock {
         1712245685 = {$plugin.tx_mediautils.view.partialRootPath}
     }
 }
+
+
+/**
+ * Configuration for responsive images
+ */
+lib.madj2kMediaUtils.responsiveImages {
+    loading = {$txMediaUtils.responsiveImages.loading}
+    lazyload = {$txMediaUtils.responsiveImages.lazyload}
+
+    placeholder {
+        size = {$txMediaUtils.responsiveImages.placeholder.size}
+        inline = {$txMediaUtils.responsiveImages.placeholder.inline}
+    }
+
+    srcset = {$txMediaUtils.responsiveImages.srcset}
+    sizes = {$txMediaUtils.responsiveImages.sizes}
+    breakpoints {
+         0 {
+            cropVariant = {$txMediaUtils.responsiveImages.breakpoints.desktop.cropVariant}
+            media = {$txMediaUtils.responsiveImages.breakpoints.desktop.media}
+            srcset = {$txMediaUtils.responsiveImages.breakpoints.desktop.srcset}
+            sizes = {$txMediaUtils.responsiveImages.breakpoints.desktop.sizes}
+        }
+
+        1 {
+            cropVariant = {$txMediaUtils.responsiveImages.breakpoints.tablet.cropVariant}
+            media = {$txMediaUtils.responsiveImages.breakpoints.tablet.media}
+            srcset = {$txMediaUtils.responsiveImages.breakpoints.tablet.srcset}
+            sizes = {$txMediaUtils.responsiveImages.breakpoints.tablet.sizes}
+        }
+
+        2 {
+            cropVariant = {$txMediaUtils.responsiveImages.breakpoints.mobile.cropVariant}
+            media = {$txMediaUtils.responsiveImages.breakpoints.mobile.media}
+            srcset = {$txMediaUtils.responsiveImages.breakpoints.mobile.srcset}
+            sizes = {$txMediaUtils.responsiveImages.breakpoints.mobile.sizes}
+        }
+    }
+
+    renderHeightAttribute = {$txMediaUtils.responsiveImages.renderHeightAttribute}
+    ignoreFileExtensions = {$txMediaUtils.responsiveImages.ignoreFileExtensions}
+    fileExtension = {$txMediaUtils.responsiveImages.fileExtension}
+
+    class = {$txMediaUtils.responsiveImages.class}
+}
+
+
+
+/**
+ * Inherit settings
+ */
+// legacy
+lib.contentElement.settings.tx_smsresponsiveimages < lib.txMediaUtils.responsiveImages
+lib.contentBlock.settings.tx_smsresponsiveimages < lib.txMediaUtils.responsiveImages
+lib.maskContentElement.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages
+
+// new
+lib.contentElement.settings.txMediaUtils < lib.txMediaUtils
+lib.contentBlock.settings.txMediaUtils < lib.txMediaUtils
+lib.maskContentElement.settings.txMediaUtils < lib.txMediaUtils

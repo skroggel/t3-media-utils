@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" product-name="media_utils">
+		<header/>
+		<body>
+			<trans-unit id="label">
+				<source>Media Utils</source>
+			</trans-unit>
+
+			<trans-unit id="categories.txMediaUtils">
+				<source>Media Utils</source>
+			</trans-unit>
+			<trans-unit id="categories.txMediaUtils.lazyloading">
+				<source>Lazy loading</source>
+			</trans-unit>
+			<trans-unit id="categories.txMediaUtils.srcset">
+				<source>Image-Tag with srcset-Attribute</source>
+			</trans-unit>
+			<trans-unit id="categories.txMediaUtils.breakpoints">
+				<source>Picture-Tag with breakpoints</source>
+			</trans-unit>
+			<trans-unit id="categories.txMediaUtils.breakpoints.desktop">
+				<source>Desktop</source>
+			</trans-unit>
+			<trans-unit id="categories.txMediaUtils.breakpoints.tablet">
+				<source>Tablet</source>
+			</trans-unit>
+			<trans-unit id="categories.txMediaUtils.breakpoints.mobile">
+				<source>Mobile</source>
+			</trans-unit>
+
+			<trans-unit id="settings.txMediaUtils.responsiveImages.loading">
+				<source>Default loading attribute</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.loading">
+				<source>Default native loading attribute for rendered images.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.lazyload">
+				<source>Enable lazyload (JS)</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.lazyload">
+				<source>Generate image markup that supports lazyloading. You have to include your own JS for lazyloading.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.placeholder.size">
+				<source>Placeholder size</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.placeholder.size">
+				<source>Size of placeholder image for lazyloading. 0 disables placeholder generation.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.placeholder.inline">
+				<source>Inline placeholder</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.placeholder.inline">
+				<source>Embed placeholder image for lazyloading inline as base64.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.srcset">
+				<source>Default srcset</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.srcset">
+				<source>Default srcset descriptors.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.sizes">
+				<source>Default sizes</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.sizes">
+				<source>Default sizes attribute pattern.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.desktop.cropVariant">
+				<source>Crop variant</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.desktop.media">
+				<source>Media query</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.desktop.srcset">
+				<source>Srcset</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.desktop.sizes">
+				<source>Sizes</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.tablet.cropVariant">
+				<source>Crop variant</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.tablet.media">
+				<source>Media query</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.tablet.srcset">
+				<source>Srcset</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.tablet.sizes">
+				<source>Sizes</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.mobile.cropVariant">
+				<source>Crop variant</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.mobile.media">
+				<source>Media query</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.mobile.srcset">
+				<source>Srcset</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.breakpoints.mobile.sizes">
+				<source>Sizes</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.ignoreFileExtensions">
+				<source>Ignored file extensions</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.ignoreFileExtensions">
+				<source>File extensions for which no responsive images should be generated.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.renderHeightAttribute">
+				<source>Render the height-attribute</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.renderHeightAttribute">
+				<source>If this is set to TRUE the height-attribute is rendered. Caution: This may have unexpected effects!</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.fileExtension">
+				<source>Target file extension</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.fileExtension">
+				<source>Use a different file extension for all generated images.</source>
+			</trans-unit>
+			<trans-unit id="settings.txMediaUtils.responsiveImages.class">
+				<source>Default CSS classes</source>
+			</trans-unit>
+			<trans-unit id="settings.description.txMediaUtils.responsiveImages.class">
+				<source>Additional CSS classes for rendered image elements.</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

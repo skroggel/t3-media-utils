@@ -1,0 +1,131 @@
+categories:
+  txMediaUtils:
+
+  txMediaUtils.lazyloading:
+    parent: txMediaUtils
+
+  txMediaUtils.srcset:
+    parent: txMediaUtils
+
+  txMediaUtils.breakpoints:
+    parent: txMediaUtils
+
+  txMediaUtils.breakpoints.desktop:
+    parent: txMediaUtils.breakpoints
+
+  txMediaUtils.breakpoints.tablet:
+    parent: txMediaUtils.breakpoints
+
+  txMediaUtils.breakpoints.mobile:
+    parent: txMediaUtils.breakpoints
+
+settings:
+  txMediaUtils.responsiveImages.loading:
+    category: txMediaUtils.lazyloading
+    type: string
+    default: 'lazy'
+
+  txMediaUtils.responsiveImages.lazyload:
+    category: txMediaUtils.lazyloading
+    type: bool
+    default: false
+
+  txMediaUtils.responsiveImages.placeholder.size:
+    category: txMediaUtils.lazyloading
+    type: int
+    default: 0
+
+  txMediaUtils.responsiveImages.placeholder.inline:
+    category: txMediaUtils.lazyloading
+    type: bool
+    default: false
+
+  txMediaUtils.responsiveImages.srcset:
+    category: txMediaUtils.srcset
+    type: string
+    default: '400, 600, 800, 1000, 1200'
+
+  txMediaUtils.responsiveImages.sizes:
+    category: txMediaUtils.srcset
+    type: string
+    default: '(min-width: %1$dpx) %1$dpx, 100vw'
+
+  txMediaUtils.responsiveImages.breakpoints.desktop.cropVariant:
+    category: txMediaUtils.breakpoints.desktop
+    type: string
+    default: 'default'
+
+  txMediaUtils.responsiveImages.breakpoints.desktop.media:
+    category: txMediaUtils.breakpoints.desktop
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.desktop.srcset:
+    category: txMediaUtils.breakpoints.desktop
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.desktop.sizes:
+    category: txMediaUtils.breakpoints.desktop
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.tablet.cropVariant:
+    category: txMediaUtils.breakpoints.tablet
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.tablet.media:
+    category: txMediaUtils.breakpoints.tablet
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.tablet.srcset:
+    category: txMediaUtils.breakpoints.tablet
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.tablet.sizes:
+    category: txMediaUtils.breakpoints.tablet
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.mobile.cropVariant:
+    category: txMediaUtils.breakpoints.mobile
+    type: string
+    default: 'default'
+
+  txMediaUtils.responsiveImages.breakpoints.mobile.media:
+    category: txMediaUtils.breakpoints.mobile
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.mobile.srcset:
+    category: txMediaUtils.breakpoints.mobile
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.breakpoints.mobile.sizes:
+    category: txMediaUtils.breakpoints.mobile
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.renderHeightAttribute:
+    category: txMediaUtils
+    type: bool
+    default: false
+
+  txMediaUtils.responsiveImages.ignoreFileExtensions:
+    category: txMediaUtils
+    type: string
+    default: 'svg, gif'
+
+  txMediaUtils.responsiveImages.fileExtension:
+    category: txMediaUtils
+    type: string
+    default: ''
+
+  txMediaUtils.responsiveImages.class:
+    category: txMediaUtils
+    type: string
+    default: ''
