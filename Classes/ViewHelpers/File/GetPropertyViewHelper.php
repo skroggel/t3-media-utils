@@ -1,5 +1,5 @@
 <?php
-namespace Madj2k\MediaUtils\ViewHelpers\File;
+declare(strict_types=1);
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -13,6 +13,7 @@ namespace Madj2k\MediaUtils\ViewHelpers\File;
  *
  * The TYPO3 project - inspiring people to share!
  */
+namespace Madj2k\MediaUtils\ViewHelpers\File;
 
 use TYPO3\CMS\Core\Resource\FileReference;
 use \TYPO3\CMS\Extbase\Domain\Model\FileReference as ExtbaseFileReference;
@@ -44,9 +45,10 @@ class GetPropertyViewHelper extends AbstractViewHelper
 
 
 	/**
-	 * @return string
+	 * @return mixed
 	 */
-    public function render(): string {
+    public function render(): mixed
+    {
 
 		/** @var \TYPO3\CMS\Core\Resource\FileReference $fileReference */
 		$fileReference = $this->arguments['file'];

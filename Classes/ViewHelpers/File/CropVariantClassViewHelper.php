@@ -1,5 +1,5 @@
 <?php
-namespace Madj2k\MediaUtils\ViewHelpers\File;
+declare(strict_types=1);
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -13,6 +13,8 @@ namespace Madj2k\MediaUtils\ViewHelpers\File;
  *
  * The TYPO3 project - inspiring people to share!
  */
+
+namespace Madj2k\MediaUtils\ViewHelpers\File;
 
 use TYPO3\CMS\Core\Resource\FileReference;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="640" height="360" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="360" fill="#f0f0f0"/>
+  <rect x="20" y="20" width="600" height="320" fill="#4a90e2" rx="20"/>
+  <text x="320" y="180" font-family="Arial, Helvetica, sans-serif" font-size="32" fill="#ffffff" text-anchor="middle" dominant-baseline="middle">
+    Test SVG Image
+  </text>
+</svg>

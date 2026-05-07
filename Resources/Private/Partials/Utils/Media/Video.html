@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:sms="http://typo3.org/ns/Sitegeist/ResponsiveImages/ViewHelpers"
+	  xmlns:mediaUtils="http://typo3.org/ns/Madj2k/MediaUtils/ResponsiveImages/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
     <f:if condition="{file}">
@@ -22,14 +22,19 @@
     <f:comment><!-- ================================================================================== --></f:comment>
 
     <f:section name="Inner">
+        
         <f:if condition="{file}">
-            <f:media file="{file}"
-                     height="{height}"
-                     width="{width}"
-                     alt="{file.alternative}"
-                     title="{file.title}"
-                     class="{class}"
-                     additionalConfig="{additionalConfig}" />
+            <mediaUtils:responsiveImages.media file="{file}"
+                   height="{height}"
+                   width="{width}"
+                   alt="{file.alternative}"
+                   title="{file.title}"
+                   class="{class}"
+                   additionalConfig="{additionalConfig}"
+                   settings="{settings}"
+                   settingsVariant="{settingsVariant}"
+            />
         </f:if>
+        
     </f:section>
 </html>

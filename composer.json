@@ -1,10 +1,10 @@
 {
     "name": "madj2k/t3-media-utils",
     "type": "typo3-cms-extension",
-    "description": "Extension with some performance fixes and helpers for sms_responsive_images",
+    "description": "TYPO3 extension providing fully configurable responsive images, media ViewHelpers and reusable partials, with support for picture tags, srcset/sizes and lazy loading.",
     "homepage": "https://www.steffenkroggel.de",
     "license": ["GPL-2.0+"],
-    "keywords": ["TYPO3 CMS", "Responsvie Images"],
+    "keywords": ["TYPO3 CMS", "Responsive Images"],
     "support": {
         "email": "developer@steffenkroggel.de"
     },
@@ -17,9 +17,12 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
-        "typo3/cms-core": "~10.4.0 || ~11.5.0 || ~12.4.0 || ~13.4.0",
-        "sitegeist/sms-responsive-images" : "~3.0.0 || ~3.1.0"
+        "php": ">=8.3",
+		"ext-fileinfo": "*",
+        "typo3/cms-core": " ~13.4.0 || ~14.4.0"
+	},
+	"replace": {
+		"sitegeist/sms-responsive-images": "*"
 	},
     "autoload": {
         "psr-4": {

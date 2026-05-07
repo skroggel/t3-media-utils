@@ -21,14 +21,9 @@
                     <f:render section="Image" arguments="{_all}" />
                 </f:case>
 
-                <!-- Video -->
-                <f:case value="4">
-                    <f:render section="Video" arguments="{_all}" />
-                </f:case>
-
                 <f:defaultCase>
-                    <f:comment><!-- We assume it's an image --></f:comment>
-                    <f:render section="Image" arguments="{_all}" />
+                    <f:comment><!-- We assume it's media  --></f:comment>
+                    <f:render section="Video" arguments="{_all}" />
                 </f:defaultCase>
             </f:switch>
         </f:then>
@@ -45,29 +40,6 @@
 
     <f:section name="Image">
         
-        <f:comment><!-- Do some mapping if default settings for the video are given --></f:comment>
-        <f:for each="{1: 'loading', 2: 'fetchpriority', 3: 'fallback', 4: 'fileExtension', 5: 'srcset', 6: 'placeholderSize', 7: 'placeholderInline', 8: 'sizes', 9: 'breakpoints', 10: 'ignoreFileExtensions', 11: 'fileDecoding'}" as="variable">
-            <f:if condition="{settingsVariant}">
-                <f:then>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.{settingsVariant}.image.{variable}}')}</f:variable>
-                </f:then>
-                <f:else>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.image.{variable}}')}</f:variable>
-                </f:else>
-            </f:if>
-        </f:for>
-
-        <f:for each="{0: 'width', 1: 'height', 2: 'maxWidth', 3: 'maxHeight'}" as="variable">
-            <f:if condition="{settingsVariant}">
-                <f:then>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.{settingsVariant}.image.dimensions.{variable}}')}</f:variable>
-                </f:then>
-                <f:else>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.image.dimensions.{variable}}')}</f:variable>
-                </f:else>
-            </f:if>
-        </f:for>
-
         <f:if condition="!{file} && !{src}"><f:variable name="src" value="{fallback}" /></f:if>
         <f:render partial="Utils/Media/Image" arguments="{_all}" />
 
@@ -77,28 +49,7 @@
 
     <f:section name="Video">
 
-        <f:comment><!-- Do some mapping if default settings for the video are given --></f:comment>
-        <f:for each="{1: 'loading', 2: 'additionalConfig'}" as="variable">
-            <f:if condition="{settingsVariant}">
-                <f:then>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.{settingsVariant}.video.{variable}}')}</f:variable>
-                </f:then>
-                <f:else>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.video.{variable}}')}</f:variable>
-                </f:else>
-            </f:if>
-        </f:for>
-        <f:for each="{0: 'width', 1: 'height', 2: 'maxWidth', 3: 'maxHeight'}" as="variable">
-            <f:if condition="{settingsVariant}">
-                <f:then>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.{settingsVariant}.video.dimensions.{variable}}')}</f:variable>
-                </f:then>
-                <f:else>
-                    <f:variable name="{variable}">{f:if(condition: '{{variable}}', then: '{{variable}}', else: '{settings.media.video.dimensions.{variable}}')}</f:variable>
-                </f:else>
-            </f:if>
-        </f:for>
-
+        <f:if condition="!{file} && !{src}"><f:variable name="src" value="{fallback}" /></f:if>
         <f:render partial="Utils/Media/Video" arguments="{_all}" />
 
     </f:section>
