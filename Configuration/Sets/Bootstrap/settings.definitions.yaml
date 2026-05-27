@@ -20,112 +20,112 @@ categories:
     parent: txMediaUtils.breakpoints
 
 settings:
-  txMediaUtils.responsiveImages.loading:
+  plugin.tx_mediautils.settings.responsiveImages.loading:
     category: txMediaUtils.lazyloading
     type: string
     default: 'lazy'
 
-  txMediaUtils.responsiveImages.lazyload:
+  plugin.tx_mediautils.settings.responsiveImages.lazyload:
     category: txMediaUtils.lazyloading
     type: bool
     default: false
 
-  txMediaUtils.responsiveImages.placeholder.size:
+  plugin.tx_mediautils.settings.responsiveImages.placeholder.size:
     category: txMediaUtils.lazyloading
     type: int
     default: 0
 
-  txMediaUtils.responsiveImages.placeholder.inline:
+  plugin.tx_mediautils.settings.responsiveImages.placeholder.inline:
     category: txMediaUtils.lazyloading
     type: bool
     default: true
 
-  txMediaUtils.responsiveImages.srcset:
+  plugin.tx_mediautils.settings.responsiveImages.srcset:
     category: txMediaUtils.srcset
     type: string
     default: ''
 
-  txMediaUtils.responsiveImages.sizes:
+  plugin.tx_mediautils.settings.responsiveImages.sizes:
     category: txMediaUtils.srcset
     type: string
     default: ''
 
-  txMediaUtils.responsiveImages.breakpoints.desktop.cropVariant:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.desktop.cropVariant:
     category: txMediaUtils.breakpoints.desktop
     type: string
     default: 'default'
 
-  txMediaUtils.responsiveImages.breakpoints.desktop.media:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.desktop.media:
     category: txMediaUtils.breakpoints.desktop
     type: string
     default: '(min-width: 992px)'
 
-  txMediaUtils.responsiveImages.breakpoints.desktop.srcset:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.desktop.srcset:
     category: txMediaUtils.breakpoints.desktop
     type: string
     default: '1200, 1400, 1920, 2800, 3840'
 
-  txMediaUtils.responsiveImages.breakpoints.desktop.sizes:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.desktop.sizes:
     category: txMediaUtils.breakpoints.desktop
     type: string
     default: '(min-width: %1$dpx) %1$dpx, 100vw'
 
-  txMediaUtils.responsiveImages.breakpoints.tablet.cropVariant:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.tablet.cropVariant:
     category: txMediaUtils.breakpoints.tablet
     type: string
     default: 'default'
 
-  txMediaUtils.responsiveImages.breakpoints.tablet.media:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.tablet.media:
     category: txMediaUtils.breakpoints.tablet
     type: string
     default: '(min-width: 576px)'
 
-  txMediaUtils.responsiveImages.breakpoints.tablet.srcset:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.tablet.srcset:
     category: txMediaUtils.breakpoints.tablet
     type: string
     default: '768, 992'
 
-  txMediaUtils.responsiveImages.breakpoints.tablet.sizes:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.tablet.sizes:
     category: txMediaUtils.breakpoints.tablet
     type: string
     default: '(min-width: %1$dpx) %1$dpx, 100vw'
 
-  txMediaUtils.responsiveImages.breakpoints.mobile.cropVariant:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.mobile.cropVariant:
     category: txMediaUtils.breakpoints.mobile
     type: string
     default: 'default'
 
-  txMediaUtils.responsiveImages.breakpoints.mobile.media:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.mobile.media:
     category: txMediaUtils.breakpoints.mobile
     type: string
     default: '(min-width: 0px)'
 
-  txMediaUtils.responsiveImages.breakpoints.mobile.srcset:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.mobile.srcset:
     category: txMediaUtils.breakpoints.mobile
     type: string
     default: '390, 576'
 
-  txMediaUtils.responsiveImages.breakpoints.mobile.sizes:
+  plugin.tx_mediautils.settings.responsiveImages.breakpoints.mobile.sizes:
     category: txMediaUtils.breakpoints.mobile
     type: string
     default: '(min-width: %1$dpx) %1$dpx, 100vw'
 
-  txMediaUtils.responsiveImages.renderHeightAttribute:
+  plugin.tx_mediautils.settings.responsiveImages.renderHeightAttribute:
     category: txMediaUtils
     type: bool
     default: false
 
-  txMediaUtils.responsiveImages.ignoreFileExtensions:
+  plugin.tx_mediautils.settings.responsiveImages.ignoreFileExtensions:
     category: txMediaUtils
     type: string
     default: 'gif, svg'
 
-  txMediaUtils.responsiveImages.fileExtension:
+  plugin.tx_mediautils.settings.responsiveImages.fileExtension:
     category: txMediaUtils
     type: string
     default: 'webp'
 
-  txMediaUtils.responsiveImages.class:
+  plugin.tx_mediautils.settings.responsiveImages.class:
     category: txMediaUtils
     type: string
     default: ''
