@@ -11,8 +11,8 @@
  ***************************************************************/
 
 $EM_CONF[$_EXTKEY] = [
-	'title' => 'Media Utils',
-	'description' => 'TYPO3 extension providing fully configurable responsive images, media ViewHelpers and reusable partials, with support for picture tags, srcset/sizes and lazy loading.',
+	'title' => 'Responsive Images & Media Utils',
+	'description' => 'TYPO3 extension providing fully configurable responsive images, useful media ViewHelpers and reusable partials, with support for picture tags, srcset/sizes and lazy loading.',
 	'category' => 'plugin',
 	'author' => 'Steffen Kroggel',
 	'author_email' => 'developer@steffenkroggel.de',
