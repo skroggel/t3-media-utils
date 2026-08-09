@@ -1,5 +1,5 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
-	  xmlns:mediaUtils="http://typo3.org/ns/Madj2k/MediaUtils/ViewHelpers/File"
+	  xmlns:mediaUtils="http://typo3.org/ns/Madj2k/MediaUtils/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
 
     <f:variable name="innerClass" value="{innerClass} {classInner} {classInnerImage}" />
@@ -24,6 +24,11 @@
                         <f:else>{file.description}</f:else>
                     </f:if>
                 </figcaption>
+            </f:if>
+            <f:if condition="{file.title} && {settings.txMediaUtils.responsiveImages.showSourceViaTitle}">
+                <small class="img-source">
+                    {file.title}
+                </small>
             </f:if>
         </figure>
     </f:if>

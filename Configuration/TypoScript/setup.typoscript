@@ -84,6 +84,7 @@ lib.txMediaUtils.responsiveImages {
     fileExtension = {$plugin.tx_mediautils.settings.responsiveImages.fileExtension}
 
     class = {$plugin.tx_mediautils.settings.responsiveImages.class}
+    showSourceViaTitle = {$plugin.tx_mediautils.settings.responsiveImages.showSourceViaTitle}
 }
 
 
