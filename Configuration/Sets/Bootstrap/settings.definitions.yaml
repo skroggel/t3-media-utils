@@ -129,3 +129,8 @@ settings:
     category: txMediaUtils
     type: string
     default: ''
+    
+  plugin.tx_mediautils.settings.responsiveImages.showSourceViaTitle:
+    category: txMediaUtils
+    type: bool
+    default: false
