@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<guides
+    xmlns="https://www.phpdoc.org/guides"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://www.phpdoc.org/guides ../vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+>
+    <project
+        title="Media Utils"
+        version="14.4.2"
+        copyright="since 2024 by Steffen Kroggel &amp; contributors"
+    />
+    <extension
+        class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+        interlink-shortcode="madj2k/t3-media-utils"
+    />
+</guides>

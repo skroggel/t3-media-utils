@@ -290,3 +290,9 @@ ddev exec vendor/bin/phpunit -c vendor/madj2k/t3-media-utils/phpunit.xml
 ```
 ddev exec vendor/bin/phpunit -c vendor/madj2k/t3-media-utils/phpunit.functional.xml
 ```
+
+# Generate the documentation as HTML
+Execute in the extension-root:
+```
+docker run --rm --pull always -v "$(pwd)":/project -it ghcr.io/typo3-documentation/render-guides:latest --config=Documentation
+```

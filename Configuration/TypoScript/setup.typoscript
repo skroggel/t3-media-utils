@@ -45,7 +45,7 @@ lib.contentBlock {
 /**
  * Configuration for responsive images
  */
-lib.madj2kMediaUtils.responsiveImages {
+lib.txMediaUtils.responsiveImages {
     loading = {$plugin.tx_mediautils.settings.responsiveImages.loading}
     lazyload = {$plugin.tx_mediautils.settings.responsiveImages.lazyload}
 
@@ -84,6 +84,7 @@ lib.madj2kMediaUtils.responsiveImages {
     fileExtension = {$plugin.tx_mediautils.settings.responsiveImages.fileExtension}
 
     class = {$plugin.tx_mediautils.settings.responsiveImages.class}
+    showSourceViaTitle = {$plugin.tx_mediautils.settings.responsiveImages.showSourceViaTitle}
 }
 
 
@@ -92,6 +93,7 @@ lib.madj2kMediaUtils.responsiveImages {
  * Inherit settings
  */
 // legacy
+lib.madj2kMediaUtils.responsiveImages < lib.txMediaUtils.responsiveImages
 lib.contentElement.settings.tx_smsresponsiveimages < lib.txMediaUtils.responsiveImages
 lib.contentBlock.settings.tx_smsresponsiveimages < lib.txMediaUtils.responsiveImages
 lib.maskContentElement.settings.tx_smsresponsiveimages < lib.contentElement.settings.tx_smsresponsiveimages

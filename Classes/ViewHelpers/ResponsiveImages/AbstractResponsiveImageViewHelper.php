@@ -106,7 +106,7 @@ abstract class AbstractResponsiveImageViewHelper extends AbstractTagBasedViewHel
         $this->registerArgument('lazyload', '?bool', 'Generate native lazyload markup', false, null);
         $this->registerArgument('placeholderSize', 'int', 'Placeholder width', false, null);
         $this->registerArgument('placeholderInline', '?bool', 'Inline placeholder', false, null);
-        $this->registerArgument('ignoreFileExtensions', 'string', 'Excluded extensions', false, null);
+        $this->registerArgument('ignoreFileExtensions', '?string', 'Excluded extensions', false, 'svg, gif');
         $this->registerArgument('renderHeightAttribute', '?bool', 'Render height attribute on fallback image tag', false, null);
     }
 

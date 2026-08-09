@@ -38,7 +38,7 @@ final readonly class ImageRenderOptions
      * @param ?string $loading Whether native loading type
      * @param string|null $decoding
      * @param string|null $fileExtension Target file extension
-     * @param string $ignoreFileExtensions Ignored file extensions
+     * @param string|null $ignoreFileExtensions Ignored file extensions
      * @param bool $renderHeightAttribute Whether height attributes should be rendered in responsive contexts
      * @param bool $forceHeightAttribute Whether height attribute should always be rendered
      * @param string|null $width Target width
