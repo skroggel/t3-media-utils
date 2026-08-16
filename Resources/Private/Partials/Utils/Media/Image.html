@@ -3,7 +3,7 @@
 	  data-namespace-typo3-fluid="true">
 
     <f:variable name="innerClass" value="{innerClass} {classInner} {classInnerImage}" />
-    <f:if condition="{file} || {src}">
+    <f:if condition="{file} || {src} || {settings.media.image.fallback}">
         <figure class="img {wrapClass}">
             <f:link.typolink class="link link-image" parameter="{link}">
                 <div class="img-inner {innerClass}">

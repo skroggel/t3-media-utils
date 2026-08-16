@@ -21,6 +21,7 @@ use Madj2k\MediaUtils\Renderer\PictureRenderer;
 use Madj2k\MediaUtils\Service\ResponsiveImageService;
 use TYPO3\CMS\Core\Resource\Exception\ResourceDoesNotExistException;
 use TYPO3\CMS\Extbase\Service\ImageService;
+use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3Fluid\Fluid\Core\Exception;
 
 /**
@@ -74,7 +75,12 @@ final class ImageViewHelper extends AbstractResponsiveImageViewHelper
     {
         $src = (string)($this->arguments['src'] ?? '');
 
-        if (($src === '' && $this->arguments['image'] === null) || ($src !== '' && $this->arguments['image'] !== null)) {
+        // set fallback if given
+        if ($src === '') {
+            $src = (string)($this->resolveSettingValue('fallback') ?? '');
+        }
+
+        if (($src === '' && $this->arguments['image'] === null)) {
             throw new Exception('You must either specify a string src or a File object.', 1517766588);
         }
 
