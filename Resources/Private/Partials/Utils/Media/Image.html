@@ -15,6 +15,11 @@
                             </div>
                         </div>
                     </f:if>
+                    <f:if condition="{file.title} && {settings.txMediaUtils.responsiveImages.showSourceViaTitle}">
+                        <small class="img-source">
+                            {file.title}
+                        </small>
+                    </f:if>
                 </div>
             </f:link.typolink>
             <f:if condition="{caption} || {file.description}">
@@ -24,11 +29,6 @@
                         <f:else>{file.description}</f:else>
                     </f:if>
                 </figcaption>
-            </f:if>
-            <f:if condition="{file.title} && {settings.txMediaUtils.responsiveImages.showSourceViaTitle}">
-                <small class="img-source">
-                    {file.title}
-                </small>
             </f:if>
         </figure>
     </f:if>
